@@ -78,6 +78,8 @@ set :puma_pid, "#{fetch(:deploy_to)}/shared/pids/puma.pid"
 set :puma_socket, "#{fetch(:deploy_to)}/shared/pids/puma.sock"
 set :puma_state, "#{fetch(:deploy_to)}/shared/pids/puma.state"
 
+set :pumactl_socket, "#{fetch(:deploy_to)}/shared/pids/pumactl.sock"
+
 
 # set :unicorn_pid, 
 # set :rvm_path, '$HOME/.rvm/bin/rvm'
