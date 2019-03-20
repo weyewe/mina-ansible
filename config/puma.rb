@@ -1,3 +1,62 @@
+### suggested 
+
+# environment "production"
+
+# bind  "unix:///{path_to_your_app}/shared/tmp/sockets/puma.sock"
+# pidfile "/{path_to_your_app}/shared/tmp/pids/puma.pid"
+# state_path "/{path_to_your_app}/shared/tmp/sockets/puma.state"
+# directory "/{path_to_your_app}/current"
+
+# workers 2
+# threads 1,2
+
+# daemonize true
+
+# activate_control_app 'unix:///{path_to_your_app}/shared/tmp/sockets/pumactl.sock'
+
+# prune_bundler
+
+
+
+
+
+################ this is the generated shite 
+
+# workers 1
+
+# threads 0, 16 
+
+# environment "production" 
+# path_to_app = "/var/www/myapp"
+# shared_dir = "#{path_to_app}/shared" 
+# stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true 
+
+
+
+
+
+
+# bind "tcp://128.199.72.136:10000"
+# pidfile "#{shared_dir}/pids/puma.pid"
+# state_path "#{shared_dir}/pids/puma.state"
+# directory "#{path_to_app}/current"
+# preload_app! 
+
+
+# before_fork do
+#   ActiveRecord::Base.connection_pool.disconnect! if defined?(ActiveRecord)
+# end
+
+# on_worker_boot do
+#   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
+# end
+
+
+
+##########################################  this is for local 
+
+
+
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.
 # Any libraries that use thread pools should be configured to match
