@@ -132,7 +132,12 @@ task :deploy do
       in_path(fetch(:current_path)) do
         
         command %(echo "the puma: #{fetch(:bundle_prefix)} puma in current_path: #{fetch(:current_path)} ")
-        command %(echo " pumactl_sock: #{fetch(:pumactl_socket)}, sock: #{fetch(:puma_socket)} ")
+        command %(echo " pumactl_sock: #{fetch(:pumactl_socket)}, pumactl command: #{fetch(:pumactl_cmd)},  sock: #{fetch(:puma_socket)} ")
+        
+        
+        command %( echo "puma_config: #{fetch(:puma_config)} | command: #{fetch(:puma_root_path)} && #{fetch(:puma_cmd)} -q -d -e #{fetch(:puma_env)} -C #{fetch(:puma_config)}" )
+        
+        
         
         # invoke :'unicorn:restart'
         invoke :'puma:phased_restart'
