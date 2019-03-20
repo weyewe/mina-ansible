@@ -5,7 +5,7 @@ require 'mina/npm'
 require 'mina/rbenv'
 require 'mina/bundler'
 
-set :domain, '128.199.69.107'
+set :domain, '128.199.159.198'
 set :application_name, 'myapp'
 set :deploy_to, '/var/www/myapp'
 set :repository, 'https://github.com/weyewe/mina-ansible.git'
