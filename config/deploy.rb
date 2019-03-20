@@ -132,7 +132,7 @@ task :deploy do
         command %(echo "the puma: #{fetch(:bundle_prefix)} puma in current_path: #{fetch(:current_path)}")
         
         # invoke :'unicorn:restart'
-        invoke :'puma:start'
+        invoke :'puma:phased_restart'
       end
     end
   end
